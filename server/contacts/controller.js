@@ -46,4 +46,16 @@ Controller.delete = async (req, res) => {
   }
 };
 
+Controller.getById = async (req, res) => {
+  try {
+    console.log(req.params.id);
+    const result = await Model.findById(req.params.id);
+    console.log(result);
+    res.status(STATUS_CODE.SUCCESS).json(result);
+  } catch (err) {
+    console.error("Error in getting items - " + err);
+    res.status(STATUS_CODE.INTERNAL_SERVER_ERROR).json([]);
+  }
+};
+
 module.exports = Controller;
