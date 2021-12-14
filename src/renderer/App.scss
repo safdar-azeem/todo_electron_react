@@ -1,0 +1,47 @@
+body{
+  background-color: #fbfeff;
+}
+body,
+p {
+  margin: 0px;
+  margin-bottom: 10px;
+  padding: 0px;
+}
+
+.page-container {
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+  width:800px !important;
+  border-radius:20px;
+  margin-top: 80px;
+  background-color: #fdffff;
+  box-shadow:-0.2px 0.1499rem 1rem rgba(0, 0, 0, 0.108);
+  .contacts_list {
+    > li {
+      padding: 0px;
+    }
+  }
+  .btn-dark{
+    background-color: #212529 !important;
+    border-color: #212529 !important;
+    color: #fff !important;
+  }
+  .contact_list_item{
+    padding-top: 25px !important;
+    padding-bottom: 25px !important;
+  }
+  .heading{
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .btn-rounded{
+    width: 40px !important;
+    height: 40px !important;
+    padding: 0px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius:120px;
+  }
+}

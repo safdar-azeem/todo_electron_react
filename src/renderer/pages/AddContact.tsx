@@ -1,5 +1,5 @@
 import  { FC } from 'react';
-import { Container, TextField, Typography } from '@mui/material';
+import { Box, Container, TextField, Typography } from '@mui/material';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import usePost from 'renderer/hooks/usePost';
@@ -42,37 +42,44 @@ const EditContact: FC<TitleProps> = ({ history }) => {
 
   return (
     <>
-      <Container sx={{ marginTop: '50px' }}>
+      <Container>
         <Typography
-          sx={{ marginBottom: '40px' }}
+          sx={{ marginBottom: '25px' }}
           variant="h5"
           component="h2"
+          className="heading"
           gutterBottom
         >
           Add Contacts
         </Typography>
         <form onSubmit={handleOnSubmit}>
-          <TextField
-            id="standard-basic"
-            label="Name"
-            sx={{ marginBottom: '20px', width: '700px', mx: 'auto' }}
-            name="name"
-            defaultValue=""
-          />
-          <TextField
-            id="standard-basic"
-            label="Email"
-            sx={{ marginBottom: '20px', width: '700px', mx: 'auto' }}
-            name="email"
-            defaultValue=""
-          />
-          <TextField
-            id="standard-basic"
-            label="Phone"
-            sx={{ marginBottom: '20px', width: '700px', mx: 'auto' }}
-            name="phone"
-            defaultValue=""
-          />
+          <Box>
+            <TextField
+              id="standard-basic"
+              label="Name"
+              sx={{ marginBottom: '20px', width: '700px', mx: 'auto' }}
+              name="name"
+              defaultValue=""
+            />
+          </Box>
+          <Box>
+            <TextField
+              id="standard-basic"
+              label="Email"
+              sx={{ marginBottom: '20px', width: '700px', mx: 'auto' }}
+              name="email"
+              defaultValue=""
+            />
+          </Box>
+          <Box>
+            <TextField
+              id="standard-basic"
+              label="Phone"
+              sx={{ marginBottom: '20px', width: '700px', mx: 'auto' }}
+              name="phone"
+              defaultValue=""
+            />
+          </Box>
           <LoadingButton
             edge="end"
             aria-label="delete"
@@ -80,6 +87,8 @@ const EditContact: FC<TitleProps> = ({ history }) => {
             color="primary"
             loading={isLoading}
             type="submit"
+            className="btn-dark"
+            sx={{ marginTop: '20px' }}
           >
             Add Contact
           </LoadingButton>

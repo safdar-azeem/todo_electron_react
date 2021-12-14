@@ -39,12 +39,13 @@ const EditContact: FC<TitleProps> = ({ match, history }) => {
 
   return (
     <>
-      <Container sx={{ marginTop: '50px' }}>
+      <Container>
         <Typography
-          sx={{ marginBottom: '40px' }}
+          sx={{ marginBottom: '35px' }}
           variant="h5"
           component="h2"
           gutterBottom
+          className="heading"
         >
           Edit Contacts
         </Typography>
@@ -71,6 +72,8 @@ const EditContact: FC<TitleProps> = ({ match, history }) => {
             color="primary"
             loading={isLoading}
             type="submit"
+            className="btn-dark"
+            sx={{ marginTop: '20px' }}
           >
             Edit Contact
           </LoadingButton>

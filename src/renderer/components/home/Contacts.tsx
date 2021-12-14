@@ -30,7 +30,7 @@ const Contacts: FC = () => {
             <CircularProgress />
           </Box>
         ) : data?.length == 0 ? (
-          <Box>
+          <Box sx={{ textAlign: 'center' }}>
             <Typography variant="h5" component="h2" gutterBottom>
               No Contacts
             </Typography>
