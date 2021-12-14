@@ -1,5 +1,5 @@
 import  { FC } from 'react';
-import { Button, Container, TextField, Typography } from '@mui/material';
+import { Container, TextField, Typography } from '@mui/material';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import usePost from 'renderer/hooks/usePost';
@@ -10,8 +10,8 @@ interface TitleProps {
   match: any;
 }
 
-const EditContact: FC<TitleProps> = ({ match, history }) => {
-  const { response, isLoading, error, doPost } = usePost();
+const EditContact: FC<TitleProps> = ({ history }) => {
+  const { isLoading, doPost } = usePost();
 
   const handleOnSubmit = async (e: any) => {
     e.preventDefault();
@@ -26,7 +26,7 @@ const EditContact: FC<TitleProps> = ({ match, history }) => {
       return;
     }
 
-    Array.from(e.target).forEach((field) => {
+    Array.from(e.target).forEach((field: any) => {
       if (field.name && field.value) {
         formdata[field.name] = field.value;
       }
@@ -39,8 +39,6 @@ const EditContact: FC<TitleProps> = ({ match, history }) => {
       history.push('/');
     }
   };
-
-  console.log(isLoading);
 
   return (
     <>

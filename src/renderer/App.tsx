@@ -1,6 +1,5 @@
-import { Suspense, ComponentType, Key } from 'react';
-import { StaticContext } from 'react-router';
-import { MemoryRouter as Router, Switch, Route, RouteComponentProps } from 'react-router-dom';
+import { Suspense} from 'react';
+import { MemoryRouter as Router, Switch, Route } from 'react-router-dom';
 import Loader from './common/Loader';
 import {Routes} from './routes/';
 import {IRoute} from "./interface/"

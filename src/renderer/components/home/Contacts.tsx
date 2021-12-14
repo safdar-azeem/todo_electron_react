@@ -1,23 +1,16 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import {
   List,
   Typography,
 } from '@mui/material';
-
-import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
-import Contact from './Contact';
+import CircularProgress from '@mui/material/CircularProgress';
 import useFetch from 'renderer/hooks/useFetch';
-
+import Contact from './Contact';
 const API_PATH = '/contacts';
 
-interface TitleProps {
-  history: any;
-  match: any;
-}
-
-const Contacts: FC<TitleProps> = ({ match, history }) => {
-  const { data, isLoading, error,doFetch } = useFetch(API_PATH);
+const Contacts: FC = () => {
+  const { data, isLoading, doFetch } = useFetch(API_PATH);
 
   const handleFetchData=()=>{
     doFetch(API_PATH);
@@ -43,7 +36,7 @@ const Contacts: FC<TitleProps> = ({ match, history }) => {
             </Typography>
           </Box>
         ) : (
-          data?.map((contact) => {
+          data?.map((contact: any) => {
             return (
               <Contact contact={contact} handleFetchData={handleFetchData} />
             );

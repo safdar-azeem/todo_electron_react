@@ -1,9 +1,10 @@
-import React, { FC, useEffect } from 'react';
+import { FC } from 'react';
 import { Container, Box } from '@mui/material';
 import Contacts from 'renderer/components/home/Contacts';
 import { Button,} from '@mui/material';
 import {Link} from 'react-router-dom';
-const Home: FC<TitleProps> = () => {
+
+const Home: FC = () => {
   return (
     <>
       <Container>

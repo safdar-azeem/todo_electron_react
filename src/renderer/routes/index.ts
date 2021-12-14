@@ -1,23 +1,24 @@
 import {lazy} from 'react';
-import { HOME, EDIT_CONTACT, ADD_CONTACT } from './types';
+import { IRoutes } from 'renderer/interface';
+import { HOME, EDIT_CONTACT, ADD_CONTACT } from './paths';
 
-export const Routes = [
+export const Routes: IRoutes = [
   {
     path: EDIT_CONTACT,
     exact: true,
     component: lazy(() => import('../pages/EditContact')),
-    data: { title: 'Edit' },
+    title: 'Edit Contact',
   },
   {
     path: ADD_CONTACT,
     exact: true,
     component: lazy(() => import('../pages/AddContact')),
-    data: { title: 'Add' },
+    title: 'Add Contact',
   },
   {
     path: HOME,
     exact: true,
     component: lazy(() => import('../pages/Home')),
-    data: { title: 'Home' },
+    title: 'Home',
   },
 ];

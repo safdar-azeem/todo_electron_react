@@ -12,8 +12,8 @@ interface TitleProps {
 }
 
 const EditContact: FC<TitleProps> = ({ match, history }) => {
-  const { data, error } = useFetch(`/contacts/get_contact/${match.params.id}`);
-  const { response, isLoading, error: editError, doPatch } = usePatch();
+  const { data } = useFetch(`/contacts/get_contact/${match.params.id}`);
+  const { isLoading, doPatch } = usePatch();
 
   const handleOnSubmit = async (e: any) => {
     e.preventDefault();
@@ -50,7 +50,7 @@ const EditContact: FC<TitleProps> = ({ match, history }) => {
         </Typography>
         <form onSubmit={handleOnSubmit}>
           {data &&
-            Object.keys(data).map((key) => {
+            Object.keys(data).map((key: string) => {
               if (key !== '_id' && key !== '__v') {
                 return (
                   <TextField

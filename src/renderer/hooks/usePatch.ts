@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import axios from '../common/axios';
 
 const usePatch = () => {
@@ -6,7 +6,7 @@ const usePatch = () => {
   const [isLoading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<any>(null);
 
-  const doPatch = async (url, data) => {
+  const doPatch = async (url: string, data: any) => {
     setLoading(true);
     try {
       const result = await axios.patch(url, data);
